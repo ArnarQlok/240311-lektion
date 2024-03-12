@@ -6,7 +6,22 @@ import "./App.css";
 import Skill from "./Skill";
 
 function App() {
-  return <Skill />;
+  // skapa ett state för skills
+  const [progSkills, setProgSkills] = useState([
+    "JavaScript",
+    "TypeScript",
+    "React",
+  ]);
+  const [foodSkills, setFoodSkills] = useState([
+    "Koka them makaroner",
+    "Hacka that lök",
+  ]);
+  return (
+    <>
+      <Skill items={progSkills} />
+      <Skill items={foodSkills} />
+    </>
+  );
 }
 
 export default App;
