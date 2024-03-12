@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 import Skill from "./Skill";
+import Computer from "./Computer";
 
 function App() {
   // skapa ett state för skills
@@ -18,8 +19,9 @@ function App() {
   ]);
   return (
     <>
-      <Skill items={progSkills} />
-      <Skill items={foodSkills} />
+      {/* <Skill items={progSkills} />
+      <Skill items={foodSkills} /> */}
+      <Computer />
     </>
   );
 }
