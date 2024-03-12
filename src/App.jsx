@@ -5,6 +5,7 @@ import "./App.css";
 
 import Skill from "./Skill";
 import Computer from "./Computer";
+import ArrayOfObject from "./ArrayOfObject";
 
 function App() {
   // skapa ett state för skills
@@ -13,15 +14,15 @@ function App() {
     "TypeScript",
     "React",
   ]);
-  const [foodSkills, setFoodSkills] = useState([
-    "Koka them makaroner",
-    "Hacka that lök",
-  ]);
+  const [foodSkills, setFoodSkills] = useState([33]);
   return (
     <>
-      {/* <Skill items={progSkills} />
-      <Skill items={foodSkills} /> */}
-      <Computer />
+      {progSkills.length > 0 && (
+        <Skill items={progSkills} setItems={setProgSkills} />
+      )}
+      <Skill items={foodSkills} setItems={setFoodSkills} />
+      {/* <Computer /> */}
+      {/* <ArrayOfObject /> */}
     </>
   );
 }

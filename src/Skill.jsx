@@ -1,19 +1,20 @@
 //importera useState
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-export default function Skill({ items }) {
+export default function Skill({ items, setItems }) {
   // ett nytt state
   const [inputValue, setInputValue] = useState("");
 
   // Add skills
   function handleAddSkill() {
-    setSkills((prevSkills) => [...prevSkills, inputValue]);
+    setItems((prevSkills) => [...prevSkills, inputValue]);
     setInputValue("");
   }
 
   // Remove skills
   function handleRemoveSkill(index) {
-    setSkills(items.filter((_, i) => i !== index));
+    setItems(items.filter((_, i) => i !== index));
   }
 
   return (
@@ -38,3 +39,6 @@ export default function Skill({ items }) {
     </div>
   );
 }
+Skill.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.string),
+};
